@@ -1,0 +1,3 @@
+#base=js
+
+training-project.iife.js
