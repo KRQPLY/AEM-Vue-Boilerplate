@@ -23,15 +23,23 @@ public class CardModelImpl implements CardModel {
 
     @ValueMapValue
     private String label; //maps variable to jcr property named "label" persisted by Dialog
+    
+    @ValueMapValue
+    private String description; //maps variable to jcr property named "description" persisted by Dialog
 
     // points to AEM component definition in ui.apps
     static final String RESOURCE_TYPE = "mysite/components/card";
 
     // public getter method to expose value of private variable `label`
-    // adds additional logic to default the label to "(Default)" if not set.
+    // adds additional logic to default the label to "Default" if not set.
     @Override
     public String getLabel() {
-        return StringUtils.isNotBlank(label) ? label : "(Default)";
+        return StringUtils.isNotBlank(label) ? label : "Default";
+    }
+
+    @Override
+    public String getDescription() {
+        return StringUtils.isNotBlank(description) ? description : "Default";
     }
 
     // method required by `ComponentExporter` interface

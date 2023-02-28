@@ -6,5 +6,7 @@ import com.adobe.cq.export.json.ComponentExporter;
 public interface CardModel extends ComponentExporter {
 
     public String getLabel();
+    
+    public String getDescription();
 
 }
