@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 
 import CardApp from './Card.vue'
 
+
 import ComponentRegistry from '../componentregistry'
 import Component from '../Component'
 

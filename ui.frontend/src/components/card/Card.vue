@@ -4,10 +4,12 @@
     <div class="description">
       {{ cardDescription ? cardDescription : 'description' }}
     </div>
+    {{ testStore.count }}
   </div>
 </template>
 
 <script setup lang="ts">
+import { useTestStore } from '$/stores/testStore'
 import { toRef } from 'vue'
 
 const props = defineProps<{
@@ -15,6 +17,7 @@ const props = defineProps<{
   description: string | undefined
 }>()
 
+const testStore = useTestStore()
 const cardLabel = toRef(props, 'label')
 const cardDescription = toRef(props, 'description')
 </script>
