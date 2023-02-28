@@ -1,4 +1,14 @@
+<template>
+  <div class="custom-button">
+    <button @click="testStore.increment">
+      {{ buttonTitle }}
+    </button>
+    {{ testStore.count }}
+  </div>
+</template>
+
 <script lang="ts" setup>
+import { useTestStore } from '$/stores/testStore'
 import { toRef } from 'vue'
 
 const props = defineProps<{
@@ -6,17 +16,11 @@ const props = defineProps<{
   bgcolor: string
 }>()
 
+const testStore = useTestStore()
+
 const buttonTitle = toRef(props, 'title')
 const buttonColor = toRef(props, 'bgcolor')
 </script>
-
-<template>
-  <div class="custom-button">
-    <button>
-      {{ buttonTitle }}
-    </button>
-  </div>
-</template>
 
 <style lang="scss" scoped>
 .custom-button {

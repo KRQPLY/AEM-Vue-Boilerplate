@@ -21,7 +21,7 @@ export class Button extends Component {
 
     const props = {
       title: this.data.title,
-      bgcolor: this.data.bgcolor
+      bgcolor: this.data.bgcolor,
     }
 
     this.app = createApp(ButtonApp, props)
