@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { toRef } from 'vue'
+
 const props = defineProps<{
   title: string
   bgcolor: string
@@ -7,8 +8,6 @@ const props = defineProps<{
 
 const buttonTitle = toRef(props, 'title')
 const buttonColor = toRef(props, 'bgcolor')
-
-console.log('buttonTitle', buttonTitle.value)
 </script>
 
 <template>
@@ -23,10 +22,12 @@ console.log('buttonTitle', buttonTitle.value)
 .custom-button {
   margin-top: 30px;
   padding: 30px;
-  background: v-bind(buttonColor);
-
-  &:hover {
-    background: red;
+  button {
+    background: v-bind(buttonColor);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
   }
 }
 </style>
